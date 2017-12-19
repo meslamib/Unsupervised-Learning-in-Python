@@ -1,0 +1,40 @@
+# Import NMF
+from sklearn.decomposition import NMF
+
+# Create an NMF instance: model
+model = NMF(n_components=6)
+
+# Fit the model to articles
+model.fit(articles)
+
+# Transform the articles: nmf_features
+nmf_features = model.transform(articles)
+
+# Print the NMF features
+print(nmf_features)
+
+
+# Import pandas
+import pandas as pd
+
+# Create a pandas DataFrame: df
+df = pd.DataFrame(nmf_features, index=titles)
+
+# Print the row for 'Anne Hathaway'
+print(df.loc['Anne Hathaway'])
+
+# Print the row for 'Denzel Washington'
+print(df.loc['Denzel Washington'])
+
+
+print(component.nlargest())
+
+ #  (6, 13125)
+ #   film       0.627877
+ #   award      0.253131
+ #   starred    0.245284
+ #   role       0.211451
+ #   actress    0.186398
+ #   Name: 3, dtype: float64
+ 
+ 
